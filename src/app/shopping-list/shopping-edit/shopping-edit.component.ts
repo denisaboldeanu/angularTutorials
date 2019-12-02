@@ -11,13 +11,15 @@ export class ShoppingEditComponent implements OnInit {
   @ViewChild('nameInput', {static: false}) nameInput: ElementRef;
   @ViewChild('amountInput', {static: false}) amountInput: ElementRef;
  @Output() ingredientAdded = new EventEmitter<Ingredient>();
- 
+
   constructor() { }
 
   ngOnInit() {
   }
 
   addIngredient(){
+    console.log(this.nameInput.nativeElement.value);  
+    console.log(this.amountInput.nativeElement.value);
     //if(this.nameInput && this.amountInput){
       const ingName =this.nameInput.nativeElement.value;
       const ingAmount = this.amountInput.nativeElement.value
